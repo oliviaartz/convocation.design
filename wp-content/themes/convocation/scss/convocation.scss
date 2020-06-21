@@ -1,4 +1,62 @@
 @import "andys-reset";
 @import "typography";
 
+$column_w: 6.25%;
+$gutter_w: 2.0833333%;
+
 $breakpoint: 768px;
+
+@mixin grid($column_num: 0, $pad_right: false, $pad_left: false) {
+
+    $gutter_num: $column_num - 1;
+
+    $width: ($column_num * $column_w) + ($gutter_num * $gutter_w);
+
+    flex-basis: $width;
+
+    @if $pad_right {
+        padding-right: $gutter_w;
+    }
+    @if $pad_left {
+        padding-left: $gutter_w;
+    }
+}
+
+@mixin row {
+    @media (min-width: $breakpoint) {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+body {
+    margin: 2rem $gutter_w/2;
+    font-family: $sans;
+    font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $sans;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+a {
+    color: #000;
+}
+
+nav,.custom-menu-class,section {
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.use-cases {
+    font-weight: 300;
+}
