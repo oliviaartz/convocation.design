@@ -36,7 +36,7 @@ function loadjs() {
     wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', '', 1, true);
     wp_enqueue_script('jquery');
 
-    wp_register_script('cs', get_template_directory_uri() . '/js/cs.js', '', 1, true);
+    wp_register_script('cs', get_template_directory_uri() . '/js/convocation.js', '', 1, true);
     wp_enqueue_script('cs');
 }
 add_action('wp_enqueue_scripts', 'loadjs');

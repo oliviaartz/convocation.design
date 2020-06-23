@@ -84,7 +84,7 @@ input, button, textarea, select {
   src: url('../webfonts/soehne-test-dreiviertelfett-kursiv.woff') format('woff');
 }
 body {
-  margin: 2rem 1.04166665%;
+  margin: 2rem 1.0638297872%;
   font-family: soehne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
