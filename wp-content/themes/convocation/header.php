@@ -20,6 +20,8 @@
     <?php   wp_nav_menu( array( 
                 'theme_location' => 'my-custom-menu', 
                 'container_class' => 'custom-menu-class' ) ); ?>
-    <h1><a href="/" title="Home"><?php echo get_bloginfo( 'name' ); ?></a></h1>
-    <h2><?php echo get_bloginfo( 'description' ); ?></h2>
+    <div class="logo">
+        <h1><a href="/" title="Home"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+        <h2><?php echo get_bloginfo( 'description' ); ?></h2>
+    </div>
 </nav>

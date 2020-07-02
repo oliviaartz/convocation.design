@@ -50,6 +50,18 @@ input, button, textarea, select {
 @font-face {
   font-family: soehne;
   font-style: normal;
+  font-weight: 200;
+  src: url('../webfonts/soehne-test-extraleicht.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: italic;
+  font-weight: 200;
+  src: url('../webfonts/soehne-test-extraleicht-kursiv.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: normal;
   font-weight: 300;
   src: url('../webfonts/soehne-test-leicht.woff') format('woff');
 }
@@ -74,6 +86,30 @@ input, button, textarea, select {
 @font-face {
   font-family: soehne;
   font-style: normal;
+  font-weight: 500;
+  src: url('../webfonts/soehne-test-kraftig.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: italic;
+  font-weight: 500;
+  src: url('../webfonts/soehne-test-kraftig-kursiv.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: normal;
+  font-weight: 600;
+  src: url('../webfonts/soehne-test-halbfett.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: italic;
+  font-weight: 600;
+  src: url('../webfonts/soehne-test-halbfett-kursiv.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: normal;
   font-weight: 700;
   src: url('../webfonts/soehne-test-dreiviertelfett.woff') format('woff');
 }
@@ -83,8 +119,32 @@ input, button, textarea, select {
   font-weight: 700;
   src: url('../webfonts/soehne-test-dreiviertelfett-kursiv.woff') format('woff');
 }
+@font-face {
+  font-family: soehne;
+  font-style: normal;
+  font-weight: 800;
+  src: url('../webfonts/soehne-test-fett.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: italic;
+  font-weight: 800;
+  src: url('../webfonts/soehne-test-fett-kursiv.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: normal;
+  font-weight: 900;
+  src: url('../webfonts/soehne-test-extrafett.woff') format('woff');
+}
+@font-face {
+  font-family: soehne;
+  font-style: italic;
+  font-weight: 900;
+  src: url('../webfonts/soehne-test-extrafett-kursiv.woff') format('woff');
+}
 body {
-  margin: 2rem 1.0638297872%;
+  margin: 2rem 4.2553191489%;
   font-family: soehne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
@@ -105,6 +165,197 @@ nav, .custom-menu-class, section {
 p {
   margin-bottom: 1rem;
 }
-.use-cases {
+nav {
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  nav {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+@media (min-width: 768px) {
+  nav {
+    flex-direction: row-reverse;
+  }
+}
+nav ul.menu {
+  margin-top: calc(1.6em + 4px);
+  text-align: right;
+}
+nav ul.menu li {
+  display: inline;
+  padding: 0 24px;
+}
+@media (max-width: 768px) {
+  nav ul.menu li {
+    padding: 0 12px;
+  }
+}
+nav ul.menu li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+nav ul.menu li a:hover {
+  border-bottom: 3px solid black;
+}
+nav ul.menu li.current-menu-item {
+  opacity: 0.4;
+}
+nav ul.menu li:first-child {
+  padding-left: 0;
+}
+nav ul.menu li:last-child {
+  padding-right: 0;
+}
+nav .logo {
+  border: 2px solid black;
+  border-radius: 100%;
+  padding: 1.6em 2.2em;
+  line-height: 1;
+}
+nav .logo h1 a {
+  text-decoration: none;
+}
+nav .logo h2 {
   font-weight: 300;
+  font-style: italic;
+}
+.who-we-are {
+  justify-content: center;
+  margin: 9em 0 12em;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .who-we-are {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  .who-we-are {
+    margin: 6em 0;
+  }
+}
+.who-we-are .triangle {
+  position: absolute;
+  top: -30px;
+  left: 8%;
+  transform: rotate(-10deg);
+}
+.who-we-are .circle {
+  position: absolute;
+  top: -30px;
+  right: 15%;
+}
+.who-we-are .intro-text {
+  flex-basis: 65.9574468085%;
+  padding-right: 2.1276595745%;
+  position: relative;
+  border-left: 4px solid black;
+  padding-left: 18px;
+  font-size: 24px;
+  font-weight: 300;
+}
+@media (max-width: 768px) {
+  .who-we-are .intro-text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.who-we-are .intro-text > *:last-child {
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .who-we-work-with {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+.who-we-work-with > div {
+  padding: 2.1276595745%;
+  background-color: rgba(0, 255, 255, 0.4);
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .use-cases {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+.use-cases > div {
+  flex-basis: 65.9574468085%;
+  font-weight: 200;
+  margin-left: 17.0212765957%;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .use-cases > div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.use-cases > div h2 {
+  font-weight: 500;
+  font-style: italic;
+}
+.use-cases > div p + h2 {
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .who-i-am {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+.who-i-am > div {
+  flex-basis: 65.9574468085%;
+  margin-left: 34.0425531915%;
+  padding: 12px;
+  background-color: rgba(0, 255, 255, 0.4);
+  font-weight: 500;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .who-i-am > div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.triangle {
+  width: 0px;
+  height: 0px;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 260px solid transparent;
+  border-top: 260px solid rgba(0, 255, 255, 1.0);
+  mix-blend-mode: multiply;
+}
+.triangle::before {
+  display: block;
+  margin-top: -260px;
+  margin-left: -150px;
+  width: 300px;
+  height: 260px;
+  background: url(../images/noise.png);
+  background-size: 100px 100px;
+  content: '';
+}
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(65, 255, 201, 1.0);
+  border-radius: 100px;
+  mix-blend-mode: multiply;
+}
+.circle::before {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: url(../images/noise.png);
+  background-size: 100px 100px;
+  content: '';
 }
