@@ -4,9 +4,9 @@
 
     <section class="who-we-are">
         <!-- <img width="400" src="https://generative-placeholders.glitch.me/image?width=600&height=400&style=joy-division" /> -->
-        <div class="triangle"></div>
-        <div class="circle"></div>
-        <div class="noise-mask"></div>
+        <!-- <div class="triangle"></div> -->
+        <!-- <div class="circle"></div> -->
+        <!-- <div class="noise-mask"></div> -->
         <div class="intro-text">
             <?php   $page = get_page_by_title( 'Home: Who We Are' );
                     $content = apply_filters('the_content', $page->post_content); 
