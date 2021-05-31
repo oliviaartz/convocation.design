@@ -3,21 +3,23 @@
 add_action( 'init', 'cp_change_post_object' );
 // Change dashboard Posts to Use Cases
 function cp_change_post_object() {
+    $new_singular = 'Journal Entry';
+    $new_plural = 'Journal Entries';
     $get_post_type = get_post_type_object('post');
     $labels = $get_post_type->labels;
-        $labels->name = 'Use Cases';
-        $labels->singular_name = 'Use Case';
-        $labels->add_new = 'Add Use Case';
-        $labels->add_new_item = 'Add Use Case';
-        $labels->edit_item = 'Edit Use Case';
-        $labels->new_item = 'Use Case';
-        $labels->view_item = 'View Use Case';
-        $labels->search_items = 'Search Use Cases';
-        $labels->not_found = 'No Use Cases found';
-        $labels->not_found_in_trash = 'No Use Cases found in Trash';
-        $labels->all_items = 'All Use Cases';
-        $labels->menu_name = 'Use Cases';
-        $labels->name_admin_bar = 'Use Cases';
+        $labels->name = $new_plural;
+        $labels->singular_name = $new_singular;
+        $labels->add_new = 'Add ' . $new_singular;
+        $labels->add_new_item = 'Add ' . $new_singular;
+        $labels->edit_item = 'Edit ' . $new_singular;
+        $labels->new_item = 'New ' . $new_singular;
+        $labels->view_item = 'View ' . $new_singular;
+        $labels->search_items = 'Search ' . $new_plural;
+        $labels->not_found = 'No ' . $new_plural . ' found';
+        $labels->not_found_in_trash = 'No ' . $new_plural . ' found in Trash';
+        $labels->all_items = 'All ' . $new_plural;
+        $labels->menu_name = $new_plural;
+        $labels->name_admin_bar = $new_plural;
 }
 
 function wpb_custom_new_menu() {
