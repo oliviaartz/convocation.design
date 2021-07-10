@@ -8,225 +8,31 @@ $breakpoint: 768px;
 
 @mixin grid($column_num: 0, $pad_right: false, $pad_left: false) {
 
-    $gutter_num: $column_num - 1;
+	$gutter_num: $column_num - 1;
 
-    $width: ($column_num * $column_w) + ($gutter_num * $gutter_w);
+	$width: ($column_num * $column_w) + ($gutter_num * $gutter_w);
 
-    flex-basis: $width;
+	flex-basis: $width;
 
-    @if $pad_right {
-        padding-right: $gutter_w;
-    }
-    @if $pad_left {
-        padding-left: $gutter_w;
-    }
+	@if $pad_right {
+		padding-right: $gutter_w;
+	}
+	@if $pad_left {
+		padding-left: $gutter_w;
+	}
 }
 
 @mixin row {
-    @media (min-width: $breakpoint) {
-        display: flex;
-        align-items: flex-start;
-    }
+	@media (min-width: $breakpoint) {
+		display: flex;
+		align-items: flex-start;
+	}
 }
 
 @mixin collapse-margins {
-    @media (max-width: $breakpoint) {
-        margin-left: 0;
-        margin-right: 0;
-    }
+	@media (max-width: $breakpoint) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
-body {
-    margin: 2rem $gutter_w*2;
-    font-family: $sans;
-    font-weight: 400;
-}
-
-h1,h2,h3,h4,h5,h6 {
-    font-family: $sans;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 18px;
-}
-
-a {
-    color: #000;
-}
-
-nav,.custom-menu-class,section {
-    margin-bottom: 2rem;
-}
-
-p {
-    margin-bottom: 1rem;
-}
-
-nav {
-    @include row;
-    justify-content: space-between;
-    @media (min-width: $breakpoint) {
-        flex-direction: row-reverse;
-    }
-    ul.menu {
-        margin-top: calc(1.6em + 4px);
-        text-align: right;
-        li {
-            display: inline;
-            padding: 0 24px;
-            @media (max-width: $breakpoint) {
-                padding: 0 12px;
-            }
-            a {
-                text-decoration: none;
-                text-transform: uppercase;
-                font-weight: 700;
-                font-size: 14px;
-                &:hover {
-                    border-bottom: 3px solid black;
-                }
-            }
-            &.current-menu-item {
-                opacity: 0.4;
-            }
-            &:first-child {
-                padding-left: 0;
-            }
-            &:last-child {
-                padding-right: 0;
-            }
-        }
-    }
-    .logo {
-        border: 2px solid black;
-        border-radius: 100%;
-        padding: 1.6em 2.2em;
-        line-height: 1;
-        h1 {
-            a {
-                text-decoration: none;
-            }
-        }
-        h2 {
-            font-weight: 300;
-            font-style: italic;
-        }
-    }
-}
-
-.who-we-are {
-    @include row;
-    justify-content: center;
-    margin: 9em 0 12em;
-    @media (max-width: $breakpoint) {
-        margin: 6em 0;
-    }
-    position: relative;
-    .triangle {
-        position: absolute;
-        top: -30px;
-        left: 8%;
-        transform: rotate(-10deg);
-    }
-    .circle {
-        position: absolute;
-        top: -30px;
-        right: 15%;
-    }
-    .intro-text {
-        @include grid(8, true);
-        @include collapse-margins();
-        position: relative;
-        border-left: 4px solid black;
-        padding-left: 18px;
-        font-size: 24px;
-        font-weight: 300;
-        & > *:last-child {
-            margin: 0;
-        }
-    }
-}
-
-.who-we-work-with {
-    @include row;
-    & > div {
-        // @include grid(8);
-        padding: $gutter_w;
-        background-color: rgba(0,255,255,0.4);
-        // background-image: url(../images/noise.png);
-        // background-size: 100px 100px;
-        font-weight: 500;
-        margin-bottom: 4rem;
-    }
-}
-
-.use-cases {
-    @include row;
-    & > div {
-        @include grid(8);
-        @include collapse-margins();
-        font-weight: 200;
-        margin-left: $column_w*2+$gutter_w*2;
-        margin-bottom: 2rem;
-        h2 {
-            font-weight: 500;
-            font-style: italic;
-        }
-        p + h2 {
-            margin-top: 3rem;
-        }
-    }
-}
-
-.who-i-am {
-    @include row;
-    & > div {
-        @include grid(8);
-        @include collapse-margins();
-        margin-left: $column_w*4+$gutter_w*4;
-        padding: 12px;
-        background-color: rgba(0,255,255,0.4);
-        font-weight: 500;
-        font-size: 14px;
-    }
-}
-
-.triangle {
-    width: 0px;
-    height: 0px;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 260px solid transparent;
-    border-top: 260px solid rgba(0,255,255,1.0);
-    mix-blend-mode: multiply;
-    &::before {
-        display: block;
-        margin-top: -260px;
-        margin-left: -150px;
-        width: 300px;
-        height: 260px;
-        background: url(../images/noise.png);
-        background-size: 100px 100px;
-        content: '';
-    }
-}
-
-.circle {
-    width: 200px;
-    height: 200px;
-    background-color: rgba(65,255,201,1.0);
-    border-radius: 100px;
-    mix-blend-mode: multiply;
-    &::before {
-        display: block;
-        width: 200px;
-        height: 200px;
-        background: url(../images/noise.png);
-        background-size: 100px 100px;
-        content: '';
-    }
-}
-
-// @import "grid-overlay";

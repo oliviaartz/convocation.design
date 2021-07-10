@@ -2,42 +2,45 @@
 
 <main id="main"  role="main">
 
-    <section class="who-we-are">
-        <!-- <img width="400" src="https://generative-placeholders.glitch.me/image?width=600&height=400&style=joy-division" /> -->
-        <!-- <div class="triangle"></div> -->
-        <!-- <div class="circle"></div> -->
-        <!-- <div class="noise-mask"></div> -->
-        <div class="intro-text">
-            <?php   $page = get_page_by_title( 'Home: Who We Are' );
-                    $content = apply_filters('the_content', $page->post_content); 
-                    echo $content; ?>
-        </div>
-    </section>
+	<section class="home-intro">
+		<p class="home-intro__paragraph--question">Let’s make the internet a <abbr title="* safer, calmer, accountable, thriving.">better</abbr> place to be.</p>
+		<p class="home-intro__paragraph--answer"><a href="/about" title="">How?</a></p>
+	</section>
 
-    <section class="who-we-work-with">
-        <div>
-            <?php   $page = get_page_by_title( 'Home: Who We Work With' );
-                    $content = apply_filters('the_content', $page->post_content); 
-                    echo $content; ?>
-        </div>
-    </section>
+	<section class="selected-areas-of-focus">
+		<h2>Areas of Focus</h2>
+		<ul>
+			<?php $areas = get_terms(array(	'taxonomy' => 'areas',
+																			'hide_empty' => false));
+					for($i = 0; $i < count($areas); $i++) { 
+						$this_area = $areas[$i];
+						if (get_field('show_on_home', $this_area->taxonomy.'_'.$this_area->term_id)) { ?>
+							<li><a href="/work/area:<?php echo $this_area->term_id; ?>" title="<?php echo $this_area->name; ?>"><?php echo $this_area->name; ?></a></li>
+			<?php }
+					} ?>
+		</ul>
+	</section>
 
-    <section class="use-cases">
-        <div>
-            <?php query_posts('showposts=3'); if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <h2><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Monthly Events' ) ) ); ?>"><?php the_title() ;?></a></h2>
-                <?php the_excerpt(); ?>
-            <?php endwhile; endif; ?>
-        </div>
-    </section>
+	<section class="selected-journal-entries">
+		<h2><a href="/journal" title="Journal">Journal</a></h2>
+		<ul>
+			<?php $posts = get_posts(array('numberposts' => 3));
+						foreach ($posts as $post) { ?>
+							<li><a href="<?php echo get_permalink($post); ?>" title=""><?php echo $post->post_title; ?></a></li>
+			<?php } ?>
+		</ul>
+	</section>
 
-    <section class="who-i-am">
-        <div>
-            <?php   $page = get_page_by_title( 'Home: Who I Am' );
-                    $content = apply_filters('the_content', $page->post_content); 
-                    echo $content; ?>
-        </div>
-    </section>
+	<section class="selected-events-and-workshops">
+		<h2>Events & Workshops</h2>
+		<ul>
+			<?php $posts = get_posts(array('post_type' => 'event', 'numberposts' => 2));
+						foreach ($posts as $post) { ?>
+							<li><a href="<?php echo get_permalink($post); ?>" title=""><?php echo $post->post_title; ?></a></li>
+			<?php } ?>
+		</ul>
+
+	</section>
 
 </main>
 
