@@ -1,5 +1,7 @@
 <?php
 
+add_theme_support( 'post-thumbnails' );
+
 add_action( 'init', 'cp_change_post_object' );
 // Change dashboard Posts to Use Cases
 function cp_change_post_object() {

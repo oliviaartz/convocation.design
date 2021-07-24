@@ -1,6 +1,12 @@
 @import "andys-reset";
 @import "typography";
 
+
+$blue: #00F;
+$white: #FFF;
+
+$border: 2px solid $blue;
+
 $column_w: 6.382978723404255%;
 $gutter_w: 2.127659574468085%;
 
@@ -36,3 +42,112 @@ $breakpoint: 768px;
 	}
 }
 
+body {
+	margin: 0 auto 40px;
+	background: $white;
+	color: $blue;
+	font-family: 'DM Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+a {
+	color: $blue;
+	text-decoration: none;
+}
+
+nav[role=navigation] {
+	.custom-menu-class {
+		flex-basis: 80px;
+		border-right: $border;
+		display: flex;
+		&:before {
+			display: block;
+			margin: auto;
+			width: 16px;
+			height: 10px;
+			border-top: $border;
+			border-bottom: $border;
+			content: '';
+		}
+	}
+	.search-button {
+		flex-basis: 80px;
+		border-left: $border;
+		display: flex;
+		a {
+			display: block;
+			margin: auto;
+		}
+	}
+	.menu {
+		display: none;
+	}
+	border-bottom: $border;
+	text-align: center;
+	display: flex;
+	.logo {
+		flex-grow: 1;
+		padding: 20px 0;
+	}
+}
+
+.home-intro {
+	padding: 20px 0;
+	border-bottom: $border;
+	font-size: 45px;
+	text-align: center;
+	p {
+		display: inline;
+		padding: 0 40px;
+	}
+	abbr,
+	a {
+		text-decoration: none;
+		border-bottom: $border;
+	}
+}
+
+.selected-areas-of-focus {
+	padding: 40px 0;
+	border-bottom: $border;
+	text-align: center;
+	h2 {
+		text-transform: uppercase;
+		font-size: 20px;
+		letter-spacing: 0.05rem;
+	}
+	ul {
+		list-style: none;
+		margin: 0 18%;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		li {
+			display: block;
+			width: calc(100% / 3 - 48px);
+			aspect-ratio: 1/1;
+			margin: 24px;
+			border: $border;
+			clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+			background: $blue;
+			a {
+				display: flex;
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+				clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+				background: $white;
+				font-size: 30px;
+				padding: 0 28px;
+			}
+		}
+	}
+}

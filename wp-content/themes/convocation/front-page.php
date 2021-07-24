@@ -15,7 +15,7 @@
 					for($i = 0; $i < count($areas); $i++) { 
 						$this_area = $areas[$i];
 						if (get_field('show_on_home', $this_area->taxonomy.'_'.$this_area->term_id)) { ?>
-							<li><a href="/work/area:<?php echo $this_area->term_id; ?>" title="<?php echo $this_area->name; ?>"><?php echo $this_area->name; ?></a></li>
+							<li><a href="/work/area:<?php echo $this_area->term_id; ?>" title="<?php echo $this_area->name; ?>"><?php echo str_replace("-"," ",$this_area->slug); ?></a></li>
 			<?php }
 					} ?>
 		</ul>

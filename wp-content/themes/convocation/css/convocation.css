@@ -47,3 +47,103 @@ input, button, textarea, select {
     scroll-behavior: auto !important;
   }
 }
+body {
+  margin: 0 auto 40px;
+  background: #FFF;
+  color: #00F;
+  font-family: 'DM Sans', sans-serif;
+}
+h1, h2, h3, h4 {
+  font-weight: 400;
+  line-height: 1.5;
+}
+a {
+  color: #00F;
+  text-decoration: none;
+}
+nav[role=navigation] {
+  border-bottom: 2px solid #00F;
+  text-align: center;
+  display: flex;
+}
+nav[role=navigation] .custom-menu-class {
+  flex-basis: 80px;
+  border-right: 2px solid #00F;
+  display: flex;
+}
+nav[role=navigation] .custom-menu-class:before {
+  display: block;
+  margin: auto;
+  width: 16px;
+  height: 10px;
+  border-top: 2px solid #00F;
+  border-bottom: 2px solid #00F;
+  content: '';
+}
+nav[role=navigation] .search-button {
+  flex-basis: 80px;
+  border-left: 2px solid #00F;
+  display: flex;
+}
+nav[role=navigation] .search-button a {
+  display: block;
+  margin: auto;
+}
+nav[role=navigation] .menu {
+  display: none;
+}
+nav[role=navigation] .logo {
+  flex-grow: 1;
+  padding: 20px 0;
+}
+.home-intro {
+  padding: 20px 0;
+  border-bottom: 2px solid #00F;
+  font-size: 45px;
+  text-align: center;
+}
+.home-intro p {
+  display: inline;
+  padding: 0 40px;
+}
+.home-intro abbr, .home-intro a {
+  text-decoration: none;
+  border-bottom: 2px solid #00F;
+}
+.selected-areas-of-focus {
+  padding: 40px 0;
+  border-bottom: 2px solid #00F;
+  text-align: center;
+}
+.selected-areas-of-focus h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.05rem;
+}
+.selected-areas-of-focus ul {
+  list-style: none;
+  margin: 0 18%;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.selected-areas-of-focus ul li {
+  display: block;
+  width: calc(100% / 3 - 48px);
+  aspect-ratio: 1;
+  margin: 24px;
+  border: 2px solid #00F;
+  clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+  background: #00F;
+}
+.selected-areas-of-focus ul li a {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+  background: #FFF;
+  font-size: 30px;
+  padding: 0 28px;
+}
