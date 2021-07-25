@@ -13,7 +13,7 @@
 	<meta name="og:image" content="<?php echo get_template_directory_uri(); ?>/favicon/og-image.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=PT+Mono&display=swap" rel="stylesheet"> 
 	<?php wp_head();?>
 </head>
 
