@@ -6,6 +6,7 @@ $blue: #00F;
 $white: #FFF;
 
 $border: 2px solid $blue;
+$mono: 'PT Mono', 'Courier New', Courier, monospace;
 
 $column_w: 6.382978723404255%;
 $gutter_w: 2.127659574468085%;
@@ -47,6 +48,8 @@ body {
 	background: $white;
 	color: $blue;
 	font-family: 'DM Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
 }
 
 h1,
@@ -54,7 +57,6 @@ h2,
 h3,
 h4 {
 	font-weight: 400;
-	line-height: 1.5;
 }
 
 a {
@@ -208,7 +210,70 @@ nav[role=navigation] {
 	}
 }
 
-.selected-events-and-workshops {
-	padding: 50px 0;
-	border-bottom: $border;
+.selected-events {
+	margin: 80px auto;
+	padding: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	width: 788px;
+	&__heading,
+	&__event {
+		padding: 0;
+		display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+	&__heading {
+		flex-basis: 36%;
+		padding: 0 5.97222222%;
+		text-transform: lowercase;
+	}
+	&__event {
+		flex-basis: 32%;
+		border: $border;
+		border-radius: 666px;
+		overflow: hidden;
+		&-link {
+			display: block;
+			width: 100%;
+		}
+	}
+	img {
+		width: 100%;
+		height: 175px;
+		object-fit: cover;
+	}
+	&__event-body {
+		display: block;
+		border-top: $border;
+		padding: 24px 12.72727273%;
+	}
+	&__type,
+	&__title,
+	&__date {
+		display: block;
+	}
+	&__type {
+		margin: 15px 0;
+		font-family: $mono;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.05rem;
+	}
+	&__title {
+		margin: 15px 0;
+		font-size: 20px;
+	}
+	&__date {
+		margin: 32px 0;
+		font-family: $mono;
+		font-size: 12px;
+		letter-spacing: 0.05rem;
+	}
+}
+
+footer {
+	border-top: $border;
+	margin: 80px 0;
 }

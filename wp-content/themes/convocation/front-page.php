@@ -37,7 +37,7 @@
 						foreach ($posts as $post) { ?>
 							<li>
 								<a href="<?php echo get_permalink($post); ?>" title="read <?php echo $post->post_title; ?>">
-									<?php echo get_the_post_thumbnail($post);?></span>
+									<?php echo get_the_post_thumbnail($post);?>
 									<span class="selected-journal-entries__body">
 										<span class="selected-journal-entries__date"><?php echo get_the_date('m.d.Y', $post); ?></span>
 										<span class="selected-journal-entries__title"><?php echo $post->post_title; ?></span>
@@ -48,16 +48,33 @@
 		</ul>
 	</section>
 
-	<section class="selected-events-and-workshops">
-		<h2>Events & Workshops</h2>
-		<ul>
-			<?php $posts = get_posts(array('post_type' => 'event', 'numberposts' => 2));
-						foreach ($posts as $post) { ?>
-							<li><a href="<?php echo get_permalink($post); ?>" title=""><?php echo $post->post_title; ?></a></li>
-			<?php } ?>
-		</ul>
+	<?php $posts = get_posts(array('post_type' => 'event', 'numberposts' => 2));
+				if (count($posts) >= 2) { ?>
+					<section class="selected-events">
+						<div class="selected-events__event">
+							<a class="selected-events__event-link" href="<?php echo get_permalink($posts[0]); ?>" title="">
+								<?php echo get_the_post_thumbnail($posts[0]);?></span>
+								<span class="selected-events__event-body">
+									<span class="selected-events__type"><?php echo wp_get_post_terms($posts[0]->ID, 'event_types', array( 'fields' => 'names' ))[0]; ?></span>
+									<span class="selected-events__title"><?php echo $posts[0]->post_title; ?></span>
+									<span class="selected-events__date"><?php echo get_the_date('F d', $posts[0]); ?></span>
+								</span>
+							</a>
+						</div>
+						<h2 class="selected-events__heading">Events & Workshops</h2>
+						<div class="selected-events__event">
+							<a class="selected-events__event-link" href="<?php echo get_permalink($posts[1]); ?>" title="">
+								<?php echo get_the_post_thumbnail($posts[1]);?></span>
+								<span class="selected-events__event-body">
+									<span class="selected-events__type"><?php echo wp_get_post_terms($posts[1]->ID, 'event_types', array( 'fields' => 'names' ))[0]; ?></span>
+									<span class="selected-events__title"><?php echo $posts[1]->post_title; ?></span>
+									<span class="selected-events__date"><?php echo get_the_date('F d', $posts[1]); ?></span>
+								</span>
+							</a>
+						</div>
+					</section>
+	<?php } ?>
 
-	</section>
 
 </main>
 
