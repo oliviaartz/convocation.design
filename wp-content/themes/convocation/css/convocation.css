@@ -265,3 +265,6 @@ footer {
   border-top: 2px solid #00F;
   margin: 80px 0;
 }
+.wp-block-image img {
+  height: auto;
+}
