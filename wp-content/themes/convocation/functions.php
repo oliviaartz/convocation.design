@@ -44,3 +44,70 @@ function loadjs() {
     wp_enqueue_script('cs');
 }
 add_action('wp_enqueue_scripts', 'loadjs');
+
+
+function get_projects() {
+	
+	$posts = get_posts(array(
+		'posts_per_page'	=> -1
+	));
+
+    $projects = array();
+
+    foreach($posts as $post) {
+        $post_id = $post->ID;
+
+        $start_date = DateTime::createFromFormat('Ymd', get_post_meta($post_id, 'project_start_date')[0]);
+        if( $start_date == '') {
+            continue;
+        }
+        $start_date = $start_date->format('Y-m-d');
+
+        $end_date = DateTime::createFromFormat('Ymd', get_post_meta($post_id, 'project_end_date')[0]);
+        if( $end_date == '') {
+            $end_date = date('Y-m-d');
+        } else {
+            $end_date = $end_date->format('Y-m-d');
+        }
+
+        $topics = get_the_category($post_id);
+        $topics_array = array();
+        $topics_array = wp_get_object_terms($post_id, 'category', array('fields' => 'slugs'));
+        $topics = implode(',', $topics_array);
+        $post_data = array(
+            'title'         => get_the_title($post),
+            'excerpt'       => get_the_excerpt($post),
+            'link'          => get_post_permalink($post),
+            'start_date'    => $start_date,
+            'end_date'      => $end_date,
+            'topics'        => $topics
+        );
+        array_push($projects, $post_data);
+    }
+
+    return $projects;
+
+}
+
+function get_project_date_range() {
+
+    global $post;
+    $post_id = $post->ID;
+
+    $start_date = DateTime::createFromFormat('Ymd', get_post_meta($post_id, 'start_date')[0]);
+    if( $start_date == '') {
+        $start_date = date('Y');
+    } else {
+        $start_date = $start_date->format('Y');
+    }
+
+    $date_range_str = $start_date;
+
+    $end_date = DateTime::createFromFormat('Ymd', get_post_meta($post_id, 'end_date')[0]);
+    if( $end_date != '') {
+        $date_range_str .= ' — '. $end_date->format('Y');
+    }
+
+    echo $date_range_str;
+
+}
