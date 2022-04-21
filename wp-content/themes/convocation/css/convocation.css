@@ -271,3 +271,23 @@ footer {
 #main {
   margin: 60px 5%;
 }
+.use-case {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .use-case-info {
+    position: absolute;
+  }
+}
+.use-case h2 {
+  font-size: 36px;
+}
+.use-case-date, .use-case-areas {
+  margin: 1rem 0;
+  font-family: 'PT Mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  letter-spacing: 0.05rem;
+}
+.use-case-date a, .use-case-areas a {
+  text-decoration: underline;
+}

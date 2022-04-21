@@ -285,3 +285,25 @@ footer {
 #main {
 	margin: 60px 5%;
 }
+
+.use-case {
+	position: relative;
+	&-info {
+		@media (min-width: $breakpoint) {
+			position: absolute;
+		}	
+	}
+	h2 {
+		font-size: 36px;
+	}
+	&-date,
+	&-areas {
+		margin: 1rem 0;
+		font-family: $mono;
+		font-size: 12px;
+		letter-spacing: 0.05rem;
+		a {
+			text-decoration: underline;
+		}
+	}
+}
