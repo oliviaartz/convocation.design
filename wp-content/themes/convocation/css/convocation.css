@@ -62,6 +62,9 @@ a {
   color: #00F;
   text-decoration: none;
 }
+p {
+  margin-bottom: 1rem;
+}
 nav[role=navigation] {
   border-bottom: 2px solid #00F;
   text-align: center;
@@ -206,15 +209,20 @@ nav[role=navigation] .logo {
   margin: 80px auto;
   padding: 0;
   text-align: center;
-  display: flex;
   justify-content: center;
-  width: 788px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+@media (min-width: 768px) {
+  .selected-events {
+    display: flex;
+    width: 788px;
+  }
 }
 .selected-events__heading, .selected-events__event {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .selected-events__heading {
   flex-basis: 36%;
@@ -277,6 +285,7 @@ footer {
 @media (min-width: 768px) {
   .use-case-info {
     position: absolute;
+    width: calc(50% - 1rem);
   }
 }
 .use-case h2 {
@@ -290,4 +299,5 @@ footer {
 }
 .use-case-date a, .use-case-areas a {
   text-decoration: underline;
+  pointer-events: none;
 }

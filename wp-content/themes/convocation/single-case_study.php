@@ -7,13 +7,11 @@
             <div class="use-case-info">
                 <h2 class="use-case-title"><?php the_title(); ?></h2>
                 <div class="use-case-date"><?php get_project_date_range(); ?></div>
-                <?php   $areas = get_field('areas_of_focus'); ?>
+                <?php   $tags = get_the_tags(); ?>
                     <div class="use-case-areas">
-                        <?php if( $areas ):
-                            foreach( $areas as $area ): 
-                                $area_term = get_term_by('term_taxonomy_id', $area, 'areas_of_focus');
-                                $area_name = get_term( $area_term )->name ?>
-                                <a href="#"><?php echo $area_name; ?></a>
+                        <?php if( $tags ):
+                            foreach ( $tags as $tag ): ?>
+                                <a href="#"><?php echo esc_html( $tag->name );; ?></a>
                             <?php endforeach; ?>
                         <?php endif; ?> 
                     </div>

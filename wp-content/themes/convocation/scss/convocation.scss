@@ -64,6 +64,10 @@ a {
 	text-decoration: none;
 }
 
+p {
+	margin-bottom: 1rem;
+}
+
 nav[role=navigation] {
 	.custom-menu-class {
 		flex-basis: 80px;
@@ -214,15 +218,18 @@ nav[role=navigation] {
 	margin: 80px auto;
 	padding: 0;
 	text-align: center;
-	display: flex;
+	@media (min-width: $breakpoint) {
+		display: flex;
+		width: 788px;
+	}
 	justify-content: center;
-	width: 788px;
+	flex-wrap: wrap;
+	gap: 14px;
 	&__heading,
 	&__event {
 		padding: 0;
 		display: flex;
     justify-content: center;
-    align-items: center;
 	}
 	&__heading {
 		flex-basis: 36%;
@@ -291,6 +298,7 @@ footer {
 	&-info {
 		@media (min-width: $breakpoint) {
 			position: absolute;
+			width: calc(50% - 1rem);
 		}	
 	}
 	h2 {
@@ -304,6 +312,7 @@ footer {
 		letter-spacing: 0.05rem;
 		a {
 			text-decoration: underline;
+			pointer-events: none;
 		}
 	}
 }
