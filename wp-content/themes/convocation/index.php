@@ -5,7 +5,7 @@
     <?php while ( have_posts() ) : the_post(); ?>
 
         <header>
-            <?php the_title('<h2>', '</h2>'); ?>
+            <!-- <?php the_title('<h2>', '</h2>'); ?> -->
         </header>
 
         <?php the_content(); ?>

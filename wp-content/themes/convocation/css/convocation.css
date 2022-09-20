@@ -53,7 +53,7 @@ body {
   color: #00F;
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 h1, h2, h3, h4 {
   font-weight: 400;
@@ -61,6 +61,18 @@ h1, h2, h3, h4 {
 a {
   color: #00F;
   text-decoration: none;
+}
+main a {
+  text-decoration: underline;
+}
+p {
+  margin-bottom: 1rem;
+}
+.page h2 {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14.5px;
+  text-transform: uppercase;
 }
 nav[role=navigation] {
   border-bottom: 2px solid #00F;
@@ -98,22 +110,25 @@ nav[role=navigation] .logo {
   padding: 20px 0;
 }
 .home-intro {
-  padding: 20px 0;
+  padding: 0 12% 40px;
   border-bottom: 2px solid #00F;
-  font-size: 45px;
+  font-size: clamp(2rem, 4vw, 4rem);
   text-align: center;
 }
-.home-intro p {
-  display: inline;
-  padding: 0 40px;
+@media (min-width: 768px) {
+  .home-intro p {
+    display: inline;
+  }
+  .home-intro .home-intro__paragraph--answer {
+    padding-left: 10vw;
+  }
 }
 .home-intro abbr, .home-intro a {
   text-decoration: none;
   border-bottom: 2px solid #00F;
 }
 .selected-areas-of-focus {
-  padding: 50px 0;
-  border-bottom: 2px solid #00F;
+  padding: 80px 0;
   text-align: center;
 }
 .selected-areas-of-focus h2 {
@@ -146,8 +161,8 @@ nav[role=navigation] .logo {
   justify-content: center;
   align-items: center;
   clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-  background: #FFF;
-  font-size: 30px;
+  background: linear-gradient(0, white, #edfeff);
+  font-size: 18px;
   padding: 0 28px;
 }
 .selected-journal-entries {
@@ -262,13 +277,12 @@ nav[role=navigation] .logo {
   letter-spacing: 0.05rem;
 }
 footer {
-  border-top: 2px solid #00F;
   margin: 80px 0;
 }
 .wp-block-image img {
   height: auto;
 }
-#main {
+[role=main] {
   margin: 60px 5%;
 }
 .use-case {
@@ -290,4 +304,23 @@ footer {
 }
 .use-case-date a, .use-case-areas a {
   text-decoration: underline;
+}
+.about--services {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.about--services p {
+  font-size: 3.2vw;
+}
+@media (min-width: 782px) {
+  .wp-block-column:not(:first-child) {
+    margin-left: 5em;
+  }
+  .wp-block-columns + .wp-block-columns {
+    margin-bottom: 4em;
+  }
+}
+.wp-block-social-links .wp-block-social-link .wp-block-social-link-anchor, .wp-block-social-links .wp-block-social-link .wp-block-social-link-anchor:active, .wp-block-social-links .wp-block-social-link .wp-block-social-link-anchor:hover, .wp-block-social-links .wp-block-social-link .wp-block-social-link-anchor:visited, .wp-block-social-links .wp-block-social-link .wp-block-social-link-anchor svg {
+  color: #00F;
+  fill: #00F;
 }
