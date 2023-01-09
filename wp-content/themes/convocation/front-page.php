@@ -10,8 +10,7 @@
 	<section class="selected-areas-of-focus">
 		<h2>Areas of Focus</h2>
 		<ul>
-			<?php $areas = get_terms(array(	'taxonomy' => 'areas',
-																			'hide_empty' => false));
+			<?php $areas = get_terms(array(	'taxonomy' => 'areas','hide_empty' => false));
 					for($i = 0; $i < count($areas); $i++) { 
 						$this_area = $areas[$i];
 						if (get_field('show_on_home', $this_area->taxonomy.'_'.$this_area->term_id)) { ?>
@@ -55,7 +54,7 @@
 							<a class="selected-events__event-link" href="<?php echo get_permalink($posts[0]); ?>" title="">
 								<?php echo get_the_post_thumbnail($posts[0]);?></span>
 								<span class="selected-events__event-body">
-									<span class="selected-events__type"><?php echo wp_get_post_terms($posts[0]->ID, 'event_types', array( 'fields' => 'names' ))[0]; ?></span>
+									<span class="selected-events__type"><?php echo wp_get_post_terms($posts[0]->ID, 'types_of_work', array( 'fields' => 'names' ))[0]; ?></span>
 									<span class="selected-events__title"><?php echo $posts[0]->post_title; ?></span>
 									<span class="selected-events__date"><?php echo get_the_date('F d', $posts[0]); ?></span>
 								</span>
@@ -66,7 +65,7 @@
 							<a class="selected-events__event-link" href="<?php echo get_permalink($posts[1]); ?>" title="">
 								<?php echo get_the_post_thumbnail($posts[1]);?></span>
 								<span class="selected-events__event-body">
-									<span class="selected-events__type"><?php echo wp_get_post_terms($posts[1]->ID, 'event_types', array( 'fields' => 'names' ))[0]; ?></span>
+									<span class="selected-events__type"><?php echo wp_get_post_terms($posts[1]->ID, 'types_of_work', array( 'fields' => 'names' ))[0]; ?></span>
 									<span class="selected-events__title"><?php echo $posts[1]->post_title; ?></span>
 									<span class="selected-events__date"><?php echo get_the_date('F d', $posts[1]); ?></span>
 								</span>

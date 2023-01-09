@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.filter {
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.filter__form {
+  display: flex;
+}
+.filter__label {
+  flex-grow: 1;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: flex-basis 500ms;
+  flex-basis: calc(100% /3);
+}
+.filter__input, .filter__select {
+  width: 100%;
+  border: none;
+  background: white;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 100%;
+  border-radius: 0;
+  font-size: 18px;
+  line-height: 2;
+}
+.filter_by_area_of_focus {
+  border: 2px solid black;
+  border-width: 0 2px;
+}
+.filter_clear_filter {
+  flex-basis: 0%;
+  flex-grow: 0;
+  width: 0%;
+}
+.filter_clear_filter input {
+  background: black;
+  color: white;
+}
+.filter__input_text {
+  padding-left: 40px;
+}
+.filter__select, .filter__input_reset {
+  text-transform: uppercase;
+}
+.filter__select {
+  padding-left: 12px;
+}
+.filter_by_text:before {
+  display: block;
+  content: '🔍';
+  position: absolute;
+  top: 0.25rem;
+  left: 0.6rem;
+}
+.filter_by_area_of_focus:after, .filter_type_of_work:after {
+  display: block;
+  content: '▼';
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  pointer-events: none;
+}
+.filter--filtering .filter_clear_filter {
+  flex-basis: 14%;
+}
+.filter--text-focus .filter_by_text {
+  flex-basis: 50%;
+}
+.filter--text-focus .filter_clear_filter {
+  flex-basis: 6%;
+}

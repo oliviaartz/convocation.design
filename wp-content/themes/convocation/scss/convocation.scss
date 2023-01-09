@@ -1,4 +1,5 @@
 @import "andys-reset";
+@import "filtering";
 
 $blue: #00F;
 $white: #FFF;
@@ -63,7 +64,7 @@ a {
 }
 
 main a {
-	text-decoration: underline;
+	// text-decoration: underline;
 }
 
 p {
@@ -135,7 +136,7 @@ nav[role=navigation] {
 
 .selected-areas-of-focus {
 	padding: 80px 0;
-	// border-bottom: $border;
+	border-bottom: $border;
 	text-align: center;
 	h2 {
 		margin-bottom: 20px;
@@ -350,4 +351,62 @@ footer {
 .wp-block-social-links.is-style-logos-only {
 	// position: relative;
 	// left: -12px;
+}
+
+.search_result {
+	border-top: $border;
+}
+
+.work_list_item {
+	padding: 24px;
+	border-bottom: $border;
+	display: grid;
+	grid-template-columns: 15% 40% 30% 15%;
+	grid-template-rows: auto;
+	grid-template-areas: 
+    "date title location type"
+    "areas excerpt image link";
+  	grid-column-gap: 24px;
+  	grid-row-gap: 24px;
+}
+
+.work_list_item_date {
+	grid-area: date;
+}
+.work_list_item_title {
+	grid-area: title;
+	font-size: inherit;
+}
+.work_list_item_location {
+	grid-area: location;
+}
+.work_list_item_type {
+	grid-area: type;
+}
+.work_list_item_areas {
+	grid-area: areas;
+	a {
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-family: 'PT Mono', 'Courier New', Courier, monospace;
+		font-size: 10px;
+		letter-spacing: 0.05rem;
+	}
+}
+.work_list_item_excerpt {
+	grid-area: excerpt;
+	font-size: 14px;
+}
+.work_list_item_image {
+	grid-area: image;
+ 	img {
+		display: block;
+		width: 180px;
+		height: auto;
+	}	
+}
+.work_list_item_link {
+	grid-area: link;
+	align-self: end;
+	text-decoration: underline;
 }
