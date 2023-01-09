@@ -1,0 +1,86 @@
+.filter {
+  margin: 20px;
+  border: 2px solid black;
+	border-radius: 100px;
+	overflow: hidden;
+  &__form {
+    display: flex;
+  }
+  &__label {
+    flex-grow: 1;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+		transition: flex-basis 100ms;
+		flex-basis: calc(100% /3);
+  }
+  &__input,
+  &__select {
+    width: 100%;
+    border: none;
+    background: white;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 100%;
+    border-radius: 0;
+		font-size: 18px;
+		line-height: 2;
+  }
+  &_by_area_of_focus {
+    border: 2px solid black;
+    border-width: 0 2px;
+  }
+  &_clear_filter {
+    flex-basis: 0%;
+    flex-grow: 0;
+    width: 0%;
+    input {
+      background: black;
+      color: white;
+    }
+  }
+	&__input_text {
+		padding-left: 40px;
+	}
+  &__select,
+  &__input_reset {
+    text-transform: uppercase;
+  }
+  &__select {
+    padding-left: 12px;
+  }
+	&_by_text:before {
+		display: block;
+		content: '🔍';
+		position: absolute;
+		top: 0.25rem;
+		left: 0.6rem;
+	}
+	
+	&_by_area_of_focus:after,
+	&_type_of_work:after {
+		display: block;
+		content: '▼';
+		position: absolute;
+		top: 0.6rem;
+		right: 0.6rem;
+		pointer-events: none;
+	}
+	
+  &--filtering {
+    .filter_clear_filter {
+      flex-basis: 14%;
+    }
+  }
+	
+  &--text-focus {
+    .filter_by_text {
+      flex-basis: 50%;
+    }
+		.filter_clear_filter {
+      flex-basis: 6%;
+		}
+  }
+}
+

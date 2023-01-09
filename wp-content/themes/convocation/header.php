@@ -20,8 +20,8 @@
 <body <?php body_class();?>>
 
 <nav role="navigation" aria-label="Main">
-	<?php   wp_nav_menu( array( 'theme_location' => 'my-custom-menu', 
-															'container_class' => 'custom-menu-class' ) ); ?>
+	<!-- <?php   wp_nav_menu( array( 'theme_location' => 'my-custom-menu', 
+															'container_class' => 'custom-menu-class' ) ); ?> -->
 	<div class="logo">
 		<h1>
 			<a href="/" title="<?php echo get_bloginfo( 'name' ); ?> home">
@@ -43,7 +43,7 @@
 		</h1>
 	</div>
 
-	<div class="search-button">
+	<!-- <div class="search-button">
 		<a href="/search" title="Search">
 			<svg aria-labelledby="title" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<title id="title" lang="en">Magnifying glass</title>
@@ -51,6 +51,6 @@
 				<line x1="8.70711" y1="9.29289" x2="15.7782" y2="16.364" stroke="#0000FF" stroke-width="2"/>
 			</svg>
 		</a>
-	</div>
+	</div> -->
 
 </nav>
